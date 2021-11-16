@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/presenceIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Click button to below to start session"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/container"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/startSessionFront"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="start2WayVideoFront"
+            android:text="@string/start_front_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/startSessionBack"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="10dp"
+            android:onClick="start2WayVideoBack"
+            android:text="@string/start_back_camera"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/startSession"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:text="Screen share" />
+
+        <Button
+            android:id="@+id/endSession"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="10dp"
+            android:text="End Session"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/openBrowser"
+            android:layout_width="250dp"
+            android:layout_height="65dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="8dp"
+            android:text="Open Browser" />
+    </LinearLayout>
+
+    <include layout="@layout/agent_viewer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
